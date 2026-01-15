@@ -65,11 +65,13 @@ text	label
 service ramro chaina	0
 ⚠️ Token-level annotation is not required. This pipeline is optimized for sentence classification.
 
-⚙️ Installation & Setup
-1️⃣ Install Dependencies
-bash
-Copy code
+## ⚙️ Installation & Setup
+
+### 1️⃣ Install Dependencies
+
+```bash
 pip install transformers accelerate datasets evaluate scikit-learn torch pandas
+
 2️⃣ Environment
 Python 3.9+
 
@@ -78,35 +80,35 @@ GPU recommended (Google Colab / CUDA)
 CPU training supported for small datasets
 
 🚀 Training Pipeline (Notebook Steps)
-1. Data Loading
+# 1. Data Loading
 Loads TSV files using Pandas
 
 Verifies column integrity
 
 Converts data into Hugging Face Dataset objects
 
-2. Tokenization
+# 2. Tokenization
 Uses AutoTokenizer from MuRIL
 
 Dynamic padding for faster training
 
 Sentence-level tokenization (no manual splitting)
 
-3. Model Initialization
+# 3. Model Initialization
 AutoModelForSequenceClassification
 
 Custom label mappings (id2label, label2id)
 
 Supports binary and multi-class classification
 
-4. Training
+# 4. Training
 Hugging Face Trainer API
 
 Optimized learning rate and batch size
 
 Epoch-based evaluation
 
-5. Evaluation
+# 5. Evaluation
 Metrics computed using scikit-learn:
 
 Accuracy
@@ -117,7 +119,7 @@ Recall
 
 F1-score
 
-6. Model Saving
+# 6. Model Saving
 Best checkpoint automatically saved
 
 Ready for inference or deployment
@@ -150,7 +152,7 @@ classifier = pipeline(
 )
 
 classifier("यो होटल धेरै राम्रो लाग्यो")
-🛠️ Engineering Best Practices Followed
+# 🛠️ Engineering Best Practices Followed
 ✅ Reproducible experiments
 ✅ Clear separation of training & evaluation
 ✅ Language-aware model selection
@@ -168,7 +170,7 @@ Social media opinion mining
 
 Academic NLP research (Final Year / Master’s Thesis)
 
-🔮 Future Improvements
+# 🔮 Future Improvements
 Add hyperparameter tuning
 
 Integrate class imbalance handling
@@ -181,5 +183,4 @@ Combine with token-level LID or NER
 
 👨‍💻 Author
 Safal Sharma
-NLP & AI Engineering
 Focus: Low-Resource Languages, Code-Mixed NLP, Transformer Models
